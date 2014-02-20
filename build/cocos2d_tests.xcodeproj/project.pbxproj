@@ -1531,8 +1531,8 @@
 		C07ACB2918B4BC7C00407385 /* RootViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = RootViewController.mm; path = ../tests/Cpp/HelloCpp/proj.ios/RootViewController.mm; sourceTree = "<group>"; };
 		C0A07AB718B5296D00A819B0 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = ../tests/Cpp/HelloCpp/proj.ios/AppController.h; sourceTree = "<group>"; };
 		C0A07AB818B5296D00A819B0 /* AppController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppController.mm; path = ../tests/Cpp/HelloCpp/proj.ios/AppController.mm; sourceTree = "<group>"; };
+		C0BD9D0B18B5A1BF00F1B75E /* HelloCpp-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "HelloCpp-Info.plist"; path = "../tests/Cpp/HelloCpp/proj.ios/HelloCpp-Info.plist"; sourceTree = "<group>"; };
 		C0D93E1518B4B38400A13DC7 /* Hello cpp iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hello cpp iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C0D93E1618B4B38400A13DC7 /* Hello cpp iOS Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Hello cpp iOS Info.plist"; path = "/Users/bo/cocos2d-x/build/Hello cpp iOS Info.plist"; sourceTree = "<absolute>"; };
 		C0D93E1A18B4B65200A13DC7 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = ../tests/Cpp/HelloCpp/Classes/AppDelegate.cpp; sourceTree = "<group>"; };
 		C0D93E1B18B4B65200A13DC7 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../tests/Cpp/HelloCpp/Classes/AppDelegate.h; sourceTree = "<group>"; };
 		C0D93E1C18B4B65200A13DC7 /* AppMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppMacros.h; path = ../tests/Cpp/HelloCpp/Classes/AppMacros.h; sourceTree = "<group>"; };
@@ -3228,12 +3228,12 @@
 		C07ACB2F18B4BDDB00407385 /* ios */ = {
 			isa = PBXGroup;
 			children = (
+				C0BD9D0B18B5A1BF00F1B75E /* HelloCpp-Info.plist */,
 				C0A07AB718B5296D00A819B0 /* AppController.h */,
 				C0A07AB818B5296D00A819B0 /* AppController.mm */,
 				C07ACB2818B4BC7C00407385 /* RootViewController.h */,
 				C07ACB2918B4BC7C00407385 /* RootViewController.mm */,
 				C07ACB2718B4BC7C00407385 /* main.m */,
-				C0D93E1618B4B38400A13DC7 /* Hello cpp iOS Info.plist */,
 				C0D93E1A18B4B65200A13DC7 /* AppDelegate.cpp */,
 				C0D93E1B18B4B65200A13DC7 /* AppDelegate.h */,
 			);
@@ -3411,6 +3411,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0500;
+				TargetAttributes = {
+					C0D93D3718B4B38400A13DC7 = {
+						DevelopmentTeam = NQ596S94Q5;
+					};
+				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "cocos2d_tests" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -4793,7 +4798,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: yu bo (X8EF3TN3ZE)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
@@ -4804,7 +4809,7 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = "$(SRCROOT)/Hello cpp iOS Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/../tests/Cpp/HelloCpp/proj.ios/HelloCpp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "Hello cpp iOS";
@@ -4820,7 +4825,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: yu bo (X8EF3TN3ZE)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -4830,7 +4835,7 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = "$(SRCROOT)/Hello cpp iOS Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/../tests/Cpp/HelloCpp/proj.ios/HelloCpp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "Hello cpp iOS";
