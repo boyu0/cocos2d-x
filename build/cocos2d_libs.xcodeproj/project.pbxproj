@@ -1112,7 +1112,6 @@
 		1AAF5354180E3060000584C8 /* AssetsManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF5351180E3060000584C8 /* AssetsManager.cpp */; };
 		1AAF5355180E3060000584C8 /* AssetsManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AAF5352180E3060000584C8 /* AssetsManager.h */; };
 		1AAF5356180E3060000584C8 /* AssetsManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AAF5352180E3060000584C8 /* AssetsManager.h */; };
-		1AAF5385180E35A3000584C8 /* libwebsockets.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAF5384180E35A3000584C8 /* libwebsockets.a */; };
 		1AAF584F180E40B9000584C8 /* LocalStorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF584C180E40B9000584C8 /* LocalStorage.cpp */; };
 		1AAF5850180E40B9000584C8 /* LocalStorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF584C180E40B9000584C8 /* LocalStorage.cpp */; };
 		1AAF5851180E40B9000584C8 /* LocalStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AAF584D180E40B9000584C8 /* LocalStorage.h */; };
@@ -1307,14 +1306,6 @@
 		1AD71EE8180E26E600808F54 /* spine-cocos2dx.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AD71DA7180E26E600808F54 /* spine-cocos2dx.h */; };
 		1AD71EE9180E26E600808F54 /* spine.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AD71DA8180E26E600808F54 /* spine.h */; };
 		1AD71EEA180E26E600808F54 /* spine.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AD71DA8180E26E600808F54 /* spine.h */; };
-		1AD71EF0180E27CF00808F54 /* CCPhysicsDebugNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AD71EEC180E27CF00808F54 /* CCPhysicsDebugNode.cpp */; };
-		1AD71EF1180E27CF00808F54 /* CCPhysicsDebugNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AD71EEC180E27CF00808F54 /* CCPhysicsDebugNode.cpp */; };
-		1AD71EF2180E27CF00808F54 /* CCPhysicsDebugNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AD71EED180E27CF00808F54 /* CCPhysicsDebugNode.h */; };
-		1AD71EF3180E27CF00808F54 /* CCPhysicsDebugNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AD71EED180E27CF00808F54 /* CCPhysicsDebugNode.h */; };
-		1AD71EF4180E27CF00808F54 /* CCPhysicsSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AD71EEE180E27CF00808F54 /* CCPhysicsSprite.cpp */; };
-		1AD71EF5180E27CF00808F54 /* CCPhysicsSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AD71EEE180E27CF00808F54 /* CCPhysicsSprite.cpp */; };
-		1AD71EF6180E27CF00808F54 /* CCPhysicsSprite.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AD71EEF180E27CF00808F54 /* CCPhysicsSprite.h */; };
-		1AD71EF7180E27CF00808F54 /* CCPhysicsSprite.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AD71EEF180E27CF00808F54 /* CCPhysicsSprite.h */; };
 		1AE3C844184F14F700CF29B5 /* CCValue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AE3C842184F14F700CF29B5 /* CCValue.cpp */; };
 		1AE3C845184F14F700CF29B5 /* CCValue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AE3C842184F14F700CF29B5 /* CCValue.cpp */; };
 		1AE3C846184F14F700CF29B5 /* CCValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AE3C843184F14F700CF29B5 /* CCValue.h */; };
@@ -2312,8 +2303,6 @@
 		1AA2063E1848437900053418 /* CCMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCMap.h; path = ../base/CCMap.h; sourceTree = "<group>"; };
 		1AAF5351180E3060000584C8 /* AssetsManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AssetsManager.cpp; sourceTree = "<group>"; };
 		1AAF5352180E3060000584C8 /* AssetsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssetsManager.h; sourceTree = "<group>"; };
-		1AAF5384180E35A3000584C8 /* libwebsockets.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libwebsockets.a; sourceTree = "<group>"; };
-		1AAF5387180E35AC000584C8 /* libwebsockets.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libwebsockets.a; sourceTree = "<group>"; };
 		1AAF5421180E4047000584C8 /* libjs_static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libjs_static.a; sourceTree = "<group>"; };
 		1AAF5424180E405B000584C8 /* libjs_static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libjs_static.a; sourceTree = "<group>"; };
 		1AAF584B180E40B9000584C8 /* Android.mk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Android.mk; sourceTree = "<group>"; };
@@ -2414,10 +2403,6 @@
 		1AD71DA6180E26E600808F54 /* spine-cocos2dx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "spine-cocos2dx.cpp"; sourceTree = "<group>"; };
 		1AD71DA7180E26E600808F54 /* spine-cocos2dx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "spine-cocos2dx.h"; sourceTree = "<group>"; };
 		1AD71DA8180E26E600808F54 /* spine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spine.h; sourceTree = "<group>"; };
-		1AD71EEC180E27CF00808F54 /* CCPhysicsDebugNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCPhysicsDebugNode.cpp; sourceTree = "<group>"; };
-		1AD71EED180E27CF00808F54 /* CCPhysicsDebugNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPhysicsDebugNode.h; sourceTree = "<group>"; };
-		1AD71EEE180E27CF00808F54 /* CCPhysicsSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCPhysicsSprite.cpp; sourceTree = "<group>"; };
-		1AD71EEF180E27CF00808F54 /* CCPhysicsSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPhysicsSprite.h; sourceTree = "<group>"; };
 		1AE3C842184F14F700CF29B5 /* CCValue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CCValue.cpp; path = ../base/CCValue.cpp; sourceTree = "<group>"; };
 		1AE3C843184F14F700CF29B5 /* CCValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCValue.h; path = ../base/CCValue.h; sourceTree = "<group>"; };
 		2AC795D318628672005EC8E1 /* BoundingBoxAttachment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BoundingBoxAttachment.cpp; sourceTree = "<group>"; };
@@ -2706,7 +2691,6 @@
 				1A5703A1180BD22C0088DEC7 /* libtiff.a in Frameworks */,
 				1A5703B8180BD2780088DEC7 /* libwebp.a in Frameworks */,
 				1A57052B180BD31F0088DEC7 /* libfreetype.a in Frameworks */,
-				1AAF5385180E35A3000584C8 /* libwebsockets.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3576,7 +3560,6 @@
 				1A570348180BD09B0088DEC7 /* tinyxml2 */,
 				1A57034F180BD0B00088DEC7 /* unzip */,
 				1A5703A5180BD2410088DEC7 /* webp */,
-				1AAF537A180E354D000584C8 /* websockets */,
 			);
 			name = external;
 			sourceTree = "<group>";
@@ -3980,41 +3963,6 @@
 			path = "assets-manager";
 			sourceTree = "<group>";
 		};
-		1AAF537A180E354D000584C8 /* websockets */ = {
-			isa = PBXGroup;
-			children = (
-				1AAF537B180E3560000584C8 /* prebuilt */,
-			);
-			name = websockets;
-			sourceTree = "<group>";
-		};
-		1AAF537B180E3560000584C8 /* prebuilt */ = {
-			isa = PBXGroup;
-			children = (
-				1AAF5386180E35AC000584C8 /* ios */,
-				1AAF5383180E35A3000584C8 /* mac */,
-			);
-			name = prebuilt;
-			sourceTree = "<group>";
-		};
-		1AAF5383180E35A3000584C8 /* mac */ = {
-			isa = PBXGroup;
-			children = (
-				1AAF5384180E35A3000584C8 /* libwebsockets.a */,
-			);
-			name = mac;
-			path = ../external/websockets/prebuilt/mac;
-			sourceTree = "<group>";
-		};
-		1AAF5386180E35AC000584C8 /* ios */ = {
-			isa = PBXGroup;
-			children = (
-				1AAF5387180E35AC000584C8 /* libwebsockets.a */,
-			);
-			name = ios;
-			path = ../external/websockets/prebuilt/ios;
-			sourceTree = "<group>";
-		};
 		1AAF541E180E4013000584C8 /* spidermonkey */ = {
 			isa = PBXGroup;
 			children = (
@@ -4214,17 +4162,6 @@
 			path = spine;
 			sourceTree = "<group>";
 		};
-		1AD71EEB180E27CF00808F54 /* physics-nodes */ = {
-			isa = PBXGroup;
-			children = (
-				1AD71EEC180E27CF00808F54 /* CCPhysicsDebugNode.cpp */,
-				1AD71EED180E27CF00808F54 /* CCPhysicsDebugNode.h */,
-				1AD71EEE180E27CF00808F54 /* CCPhysicsSprite.cpp */,
-				1AD71EEF180E27CF00808F54 /* CCPhysicsSprite.h */,
-			);
-			path = "physics-nodes";
-			sourceTree = "<group>";
-		};
 		1AD71EF8180E28C400808F54 /* json */ = {
 			isa = PBXGroup;
 			children = (
@@ -4323,7 +4260,6 @@
 				46A168321807AF4E005B8026 /* ExtensionMacros.h */,
 				1AAF5350180E305F000584C8 /* assets-manager */,
 				46A168331807AF4E005B8026 /* GUI */,
-				1AD71EEB180E27CF00808F54 /* physics-nodes */,
 			);
 			name = extensions;
 			path = ../extensions;
@@ -5234,8 +5170,6 @@
 				460E478018080902000CDD6D /* CCControlButton.h in Headers */,
 				460E478D18080902000CDD6D /* CCControlStepper.h in Headers */,
 				460E47D218080913000CDD6D /* CCTableViewCell.h in Headers */,
-				1AD71EF2180E27CF00808F54 /* CCPhysicsDebugNode.h in Headers */,
-				1AD71EF6180E27CF00808F54 /* CCPhysicsSprite.h in Headers */,
 				1AAF5355180E3060000584C8 /* AssetsManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -5629,8 +5563,6 @@
 				460E47A018080904000CDD6D /* CCControlPotentiometer.h in Headers */,
 				460E47BE1808090D000CDD6D /* CCEditBox.h in Headers */,
 				460E47C21808090D000CDD6D /* CCEditBoxImplIOS.h in Headers */,
-				1AD71EF3180E27CF00808F54 /* CCPhysicsDebugNode.h in Headers */,
-				1AD71EF7180E27CF00808F54 /* CCPhysicsSprite.h in Headers */,
 				1AAF5356180E3060000584C8 /* AssetsManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -6421,8 +6353,6 @@
 				460E479418080902000CDD6D /* CCScale9Sprite.cpp in Sources */,
 				460E478118080902000CDD6D /* CCControlColourPicker.cpp in Sources */,
 				460E479018080902000CDD6D /* CCControlUtils.cpp in Sources */,
-				1AD71EF0180E27CF00808F54 /* CCPhysicsDebugNode.cpp in Sources */,
-				1AD71EF4180E27CF00808F54 /* CCPhysicsSprite.cpp in Sources */,
 				1AAF5353180E3060000584C8 /* AssetsManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -6760,8 +6690,6 @@
 				460E479618080904000CDD6D /* CCControl.cpp in Sources */,
 				460E47A518080904000CDD6D /* CCControlStepper.cpp in Sources */,
 				460E479A18080904000CDD6D /* CCControlColourPicker.cpp in Sources */,
-				1AD71EF1180E27CF00808F54 /* CCPhysicsDebugNode.cpp in Sources */,
-				1AD71EF5180E27CF00808F54 /* CCPhysicsSprite.cpp in Sources */,
 				1AAF5354180E3060000584C8 /* AssetsManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
