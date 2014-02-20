@@ -1,5 +1,6 @@
 /****************************************************************************
- Copyright (c) 2010 cocos2d-x.org
+ Copyright (c) 2010-2011 cocos2d-x.org
+ Copyright (c) 2010      Ricardo Quesada
  
  http://www.cocos2d-x.org
  
@@ -22,12 +23,11 @@
  THE SOFTWARE.
  ****************************************************************************/
 
-@class RootViewController;
+#import <UIKit/UIKit.h>
 
-@interface AppController : NSObject <UIApplicationDelegate> {
-    UIWindow *window;
-    RootViewController    *viewController;
+
+@interface RootViewController : UIViewController {
+
 }
-
+- (BOOL)prefersStatusBarHidden;
 @end
-

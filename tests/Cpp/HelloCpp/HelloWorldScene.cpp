@@ -45,6 +45,7 @@ bool HelloWorld::init()
     
     auto image = new Image();
     delete image;
-    
+    auto body = PhysicsBody::create();
+    body->setEnable(true);
     return true;
 }
