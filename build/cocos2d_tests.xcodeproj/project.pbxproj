@@ -89,7 +89,6 @@
 		1A11986B178538E400D62A44 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A07A52B71783AE6D0073F6A7 /* UIKit.framework */; };
 		1A11986C178538E400D62A44 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A07A52C11783B01F0073F6A7 /* AVFoundation.framework */; };
 		1A6FB7A71785614200CDF010 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 15C6482E165F399D007D4F18 /* libz.dylib */; };
-		1A6FB7A81785614200CDF010 /* libcurl.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9F808C177E98A600D9A1CB /* libcurl.dylib */; };
 		1A6FB7A91785614200CDF010 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15C6482A165F3979007D4F18 /* ApplicationServices.framework */; };
 		1A6FB7AA1785614200CDF010 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15C6482C165F3988007D4F18 /* AudioToolbox.framework */; };
 		1A6FB7AB1785614200CDF010 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15C64832165F3AFD007D4F18 /* Foundation.framework */; };
@@ -554,7 +553,6 @@
 		1A9DCA62180E7453007A3AD4 /* libcocos2dx-extensions iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46A15FC01807A4F9005B8026 /* libcocos2dx-extensions iOS.a */; };
 		1A9DCA63180E7453007A3AD4 /* libCocosDenshion iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46A15FC61807A4F9005B8026 /* libCocosDenshion iOS.a */; };
 		1A9DCA64180E7453007A3AD4 /* libjsbindings iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46A15FC81807A4F9005B8026 /* libjsbindings iOS.a */; };
-		1A9F808D177E98A600D9A1CB /* libcurl.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9F808C177E98A600D9A1CB /* libcurl.dylib */; };
 		1AAF534B180E2F4E000584C8 /* libbox2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46A15FB61807A4F9005B8026 /* libbox2d Mac.a */; };
 		1AAF534C180E2F4E000584C8 /* libchipmunk Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46A15FB41807A4F9005B8026 /* libchipmunk Mac.a */; };
 		1AAF534D180E2F4E000584C8 /* libcocos2dx Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46A15FB01807A4F9005B8026 /* libcocos2dx Mac.a */; };
@@ -617,7 +615,6 @@
 		A01E176D1784C06E00B0CA4A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A07A52B71783AE6D0073F6A7 /* UIKit.framework */; };
 		A01E176E1784C06E00B0CA4A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A07A52C11783B01F0073F6A7 /* AVFoundation.framework */; };
 		A01E18F81784C59400B0CA4A /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A035A71117822E9E00987F6C /* libsqlite3.dylib */; };
-		A035A5E01782290400987F6C /* libcurl.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9F808C177E98A600D9A1CB /* libcurl.dylib */; };
 		A035A5E11782290400987F6C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 15C6482E165F399D007D4F18 /* libz.dylib */; };
 		A035A5E21782290400987F6C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15C64832165F3AFD007D4F18 /* Foundation.framework */; };
 		A035A5E31782290400987F6C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15C6482C165F3988007D4F18 /* AudioToolbox.framework */; };
@@ -1515,7 +1512,6 @@
 		1A92D7F518976EF2002F2C16 /* Test_Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Test_Info.plist; path = "../tests/test-javascript/proj.mac/Test_Info.plist"; sourceTree = "<group>"; };
 		1A92D7F618976EF2002F2C16 /* Test_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Test_Prefix.pch; path = "../tests/test-javascript/proj.mac/Test_Prefix.pch"; sourceTree = "<group>"; };
 		1A9DC9E4180E6742007A3AD4 /* script */ = {isa = PBXFileReference; lastKnownFileType = folder; name = script; path = ../cocos/scripting/javascript/script; sourceTree = "<group>"; };
-		1A9F808C177E98A600D9A1CB /* libcurl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcurl.dylib; path = usr/lib/libcurl.dylib; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* Test cpp Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Test cpp Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46A15F9C1807A4F8005B8026 /* cocos2d_libs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = cocos2d_libs.xcodeproj; sourceTree = "<group>"; };
 		A01E17721784C06E00B0CA4A /* Test JavaScript iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Test JavaScript iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1531,8 +1527,8 @@
 		C07ACB2918B4BC7C00407385 /* RootViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = RootViewController.mm; path = ../tests/Cpp/HelloCpp/proj.ios/RootViewController.mm; sourceTree = "<group>"; };
 		C0A07AB718B5296D00A819B0 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = ../tests/Cpp/HelloCpp/proj.ios/AppController.h; sourceTree = "<group>"; };
 		C0A07AB818B5296D00A819B0 /* AppController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppController.mm; path = ../tests/Cpp/HelloCpp/proj.ios/AppController.mm; sourceTree = "<group>"; };
+		C0AF392618B5ACF6003D72B0 /* HelloCpp-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "HelloCpp-Info.plist"; path = "../tests/Cpp/HelloCpp/proj.ios/HelloCpp-Info.plist"; sourceTree = "<group>"; };
 		C0D93E1518B4B38400A13DC7 /* Hello cpp iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hello cpp iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C0D93E1618B4B38400A13DC7 /* Hello cpp iOS Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Hello cpp iOS Info.plist"; path = "/Users/bo/cocos2d-x/build/Hello cpp iOS Info.plist"; sourceTree = "<absolute>"; };
 		C0D93E1A18B4B65200A13DC7 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = ../tests/Cpp/HelloCpp/Classes/AppDelegate.cpp; sourceTree = "<group>"; };
 		C0D93E1B18B4B65200A13DC7 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../tests/Cpp/HelloCpp/Classes/AppDelegate.h; sourceTree = "<group>"; };
 		C0D93E1C18B4B65200A13DC7 /* AppMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppMacros.h; path = ../tests/Cpp/HelloCpp/Classes/AppMacros.h; sourceTree = "<group>"; };
@@ -1575,7 +1571,6 @@
 				1A8C588D180E8F7600EF57C3 /* libCocosDenshion Mac.a in Frameworks */,
 				1A8C588E180E8F7600EF57C3 /* libluabindings Mac.a in Frameworks */,
 				1A6FB7A71785614200CDF010 /* libz.dylib in Frameworks */,
-				1A6FB7A81785614200CDF010 /* libcurl.dylib in Frameworks */,
 				1A6FB7A91785614200CDF010 /* ApplicationServices.framework in Frameworks */,
 				1A6FB7AA1785614200CDF010 /* AudioToolbox.framework in Frameworks */,
 				1A6FB7AB1785614200CDF010 /* Foundation.framework in Frameworks */,
@@ -1597,7 +1592,6 @@
 				1AAF534E180E2F4E000584C8 /* libcocos2dx-extensions Mac.a in Frameworks */,
 				1AAF534F180E2F4E000584C8 /* libCocosDenshion Mac.a in Frameworks */,
 				EDCC747F17C455FD007B692C /* IOKit.framework in Frameworks */,
-				1A9F808D177E98A600D9A1CB /* libcurl.dylib in Frameworks */,
 				15C6482F165F399D007D4F18 /* libz.dylib in Frameworks */,
 				15C64833165F3AFD007D4F18 /* Foundation.framework in Frameworks */,
 				15C6482D165F3988007D4F18 /* AudioToolbox.framework in Frameworks */,
@@ -1642,7 +1636,6 @@
 				1A9DC9F4180E68D8007A3AD4 /* libCocosDenshion Mac.a in Frameworks */,
 				1A9DC9F5180E68D8007A3AD4 /* libjsbindings Mac.a in Frameworks */,
 				A035A71217822E9E00987F6C /* libsqlite3.dylib in Frameworks */,
-				A035A5E01782290400987F6C /* libcurl.dylib in Frameworks */,
 				A035A5E11782290400987F6C /* libz.dylib in Frameworks */,
 				A035A5E21782290400987F6C /* Foundation.framework in Frameworks */,
 				A035A5E31782290400987F6C /* AudioToolbox.framework in Frameworks */,
@@ -3186,7 +3179,6 @@
 			children = (
 				D60AE43317F7FFE100757E4B /* CoreMotion.framework */,
 				A035A71117822E9E00987F6C /* libsqlite3.dylib */,
-				1A9F808C177E98A600D9A1CB /* libcurl.dylib */,
 				15C6482E165F399D007D4F18 /* libz.dylib */,
 				EDCC747E17C455FD007B692C /* IOKit.framework */,
 				A07A52C11783B01F0073F6A7 /* AVFoundation.framework */,
@@ -3228,12 +3220,12 @@
 		C07ACB2F18B4BDDB00407385 /* ios */ = {
 			isa = PBXGroup;
 			children = (
+				C0AF392618B5ACF6003D72B0 /* HelloCpp-Info.plist */,
 				C0A07AB718B5296D00A819B0 /* AppController.h */,
 				C0A07AB818B5296D00A819B0 /* AppController.mm */,
 				C07ACB2818B4BC7C00407385 /* RootViewController.h */,
 				C07ACB2918B4BC7C00407385 /* RootViewController.mm */,
 				C07ACB2718B4BC7C00407385 /* main.m */,
-				C0D93E1618B4B38400A13DC7 /* Hello cpp iOS Info.plist */,
 				C0D93E1A18B4B65200A13DC7 /* AppDelegate.cpp */,
 				C0D93E1B18B4B65200A13DC7 /* AppDelegate.h */,
 			);
@@ -4804,7 +4796,7 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = "$(SRCROOT)/Hello cpp iOS Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/../tests/Cpp/HelloCpp/proj.ios/HelloCpp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "Hello cpp iOS";
@@ -4830,7 +4822,7 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = "$(SRCROOT)/Hello cpp iOS Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/../tests/Cpp/HelloCpp/proj.ios/HelloCpp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "Hello cpp iOS";
