@@ -2,6 +2,7 @@
 #include "AppMacros.h"
 
 #include "CCEventListenerTouch.h"
+#include "WebSocket.h"
 
 USING_NS_CC;
 
@@ -43,5 +44,11 @@ bool HelloWorld::init()
     // add the label as a child to this layer
     this->addChild(label, 1);
     
+    auto socket = new network::WebSocket();
+    delete socket;
+    auto image = new Image();
+    delete image;
+    auto body = PhysicsBody::create();
+    body->setEnable(true);
     return true;
 }
