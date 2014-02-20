@@ -43,5 +43,9 @@ bool HelloWorld::init()
     // add the label as a child to this layer
     this->addChild(label, 1);
     
+    auto image = new Image();
+    delete image;
+    auto body = PhysicsBody::create();
+    body->setEnable(true);
     return true;
 }
