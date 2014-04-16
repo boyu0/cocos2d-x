@@ -7,6 +7,7 @@ namespace
 {
     static std::function<Layer*()> createFunctions[] = {
 #if CC_USE_PHYSICS
+        CL(PhysicsDemoPyramidStack),
         CL(PhysicsDemoLogoSmash),
         CL(PhysicsDemoPyramidStack),
         CL(PhysicsDemoClickAdd),
@@ -520,6 +521,19 @@ void PhysicsDemoPyramidStack::onEnter()
             sp->getPhysicsBody()->setTag(DRAG_BODYS_TAG);
         }
     }
+    
+    // scene transform
+    // Dispite the wrong sprite transform compute (see the physics body)
+    // You can see the narrow transformed with the scene, and we cann't seperate it if the physics world attacked at scene.
+    // So if we want UI component attach to screen, we need move physics world to layer.
+    
+    auto moveTo = MoveTo::create(2.0, Point(200, 100));
+    auto moveBack = MoveTo::create(2.0, Point(0.0, 0.0));
+    auto rotateTo = RotateTo::create(2, 180, 180);
+    auto rotateBack = RotateTo::create(2, 0, 0);
+    
+    _scene->runAction(RepeatForever::create(Sequence::create(moveTo, moveBack, rotateTo, rotateBack, nullptr)));
+    _scene->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
 }
 std::string PhysicsDemoPyramidStack::title() const
 {
