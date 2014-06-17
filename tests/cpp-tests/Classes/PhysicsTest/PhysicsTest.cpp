@@ -7,8 +7,8 @@ namespace
 {
     static std::function<Layer*()> createFunctions[] = {
 #if CC_USE_PHYSICS
-        CL(PhysicsDemoLogoSmash),
         CL(PhysicsDemoPyramidStack),
+        CL(PhysicsDemoLogoSmash),
         CL(PhysicsDemoClickAdd),
         CL(PhysicsDemoRayCast),
         CL(PhysicsDemoJoints),
@@ -493,6 +493,8 @@ void PhysicsDemoPyramidStack::onEnter()
 {
     PhysicsDemo::onEnter();
     
+    _scene->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
+    
     auto touchListener = EventListenerTouchOneByOne::create();
     touchListener->onTouchBegan = CC_CALLBACK_2(PhysicsDemoPyramidStack::onTouchBegan, this);
     touchListener->onTouchMoved = CC_CALLBACK_2(PhysicsDemoPyramidStack::onTouchMoved, this);
@@ -521,6 +523,9 @@ void PhysicsDemoPyramidStack::onEnter()
             sp->getPhysicsBody()->setTag(DRAG_BODYS_TAG);
         }
     }
+    
+    auto action = ScaleTo::create(2.0f, 0.5f);
+    this->runAction(action);
 }
 std::string PhysicsDemoPyramidStack::title() const
 {
