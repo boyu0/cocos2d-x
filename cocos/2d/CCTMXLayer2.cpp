@@ -98,10 +98,38 @@ bool TMXLayer2::initWithTilesetInfo(TMXTilesetInfo *tilesetInfo, TMXLayerInfo *l
     this->tileToNodeTransform();
 
     // shader, and other stuff
-    setGLProgram(GLProgramCache::getInstance()->getGLProgram(GLProgram::SHADER_NAME_POSITION_TEXTURE_COLOR));
+    //setGLProgram(GLProgramCache::getInstance()->getGLProgram(GLProgram::SHADER_NAME_POSITION_TEXTURE_COLOR));
     
     _useAutomaticVertexZ = false;
     _vertexZvalue = 0;
+    
+    _tileSet->_imageSize = _texture->getContentSizeInPixels();
+    for (int i = _layerSize.height-1; i >= 0; --i)
+        for (int j = 0; j < _layerSize.width; ++j)
+        {
+            // tile not created yet. create it
+            int index = j + i * (int)_layerSize.width;
+            Point tileCoordinate = Point(i, j);
+            uint32_t gid = _tiles[index];
+            if (gid == 0)
+            {
+                continue;
+            }
+            Rect rect = _tileSet->getRectForGID(gid);
+            rect = CC_RECT_PIXELS_TO_POINTS(rect);
+            auto tile = Sprite::createWithTexture(_texture, rect);
+            
+            Point p = this->getPositionAt(tileCoordinate);
+            tile->setAnchorPoint(Point::ZERO);
+            tile->setPosition(p);
+            tile->setPositionZ((float)getVertexZForPos(tileCoordinate));
+            tile->setOpacity(this->getOpacity());
+            tile->setTag(index);
+            this->addChild(tile, -index);
+            //_spriteContainer.insert(std::pair<int, std::pair<Sprite*, int> >(index, std::pair<Sprite*, int>(tile, gid)));
+            
+            // tile is converted to sprite.
+        }
 
     return true;
 }
@@ -133,81 +161,81 @@ TMXLayer2::~TMXLayer2()
     CC_SAFE_FREE(_indices);
 }
 
-void TMXLayer2::draw(Renderer *renderer, const Mat4& transform, uint32_t flags)
-{
-    _customCommand.init(_globalZOrder);
-    _customCommand.func = CC_CALLBACK_0(TMXLayer2::onDraw, this, transform, flags);
-    renderer->addCommand(&_customCommand);
-}
-
-void TMXLayer2::onDraw(const Mat4 &transform, bool transformUpdated)
-{
-    GL::enableVertexAttribs(GL::VERTEX_ATTRIB_FLAG_POSITION | GL::VERTEX_ATTRIB_FLAG_TEX_COORD);
-    GL::bindTexture2D( _texture->getName() );
-
-
-    // tex coords + indices
-    glBindBuffer(GL_ARRAY_BUFFER, _buffersVBO[0]);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _buffersVBO[1]);
-
-
-    if( transformUpdated || _dirty )
-    {
-    
-        Size s = Director::getInstance()->getWinSize();
-		auto rect = Rect(0, 0, s.width, s.height);
-
-        Mat4 inv = transform;
-        inv.inverse();
-        rect = RectApplyTransform(rect, inv);
-
-        if (Configuration::getInstance()->supportsShareableVAO())
-        {
-            V2F_T2F_Quad* quads = (V2F_T2F_Quad*)glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
-            GLushort* indices = (GLushort *)glMapBuffer(GL_ELEMENT_ARRAY_BUFFER, GL_WRITE_ONLY);
-            _verticesToDraw = updateTiles(rect, quads, indices);
-            glUnmapBuffer(GL_ARRAY_BUFFER);
-            glUnmapBuffer(GL_ELEMENT_ARRAY_BUFFER);
-        }
-        else
-        {
-            _verticesToDraw = updateTiles(rect, nullptr, nullptr);
-            
-            if (_quads != nullptr && _indices != nullptr && _verticesToDraw > 0)
-            {
-                glBufferData(GL_ARRAY_BUFFER, sizeof(_quads[0]) * _numQuads , _quads, GL_DYNAMIC_DRAW);
-                glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(_indices[0]) * _numQuads * 6 , _indices, GL_STATIC_DRAW);
-            }
-        }
-
-        // don't draw more than 65535 vertices since we are using GL_UNSIGNED_SHORT for indices
-        _verticesToDraw = std::min(_verticesToDraw, 65535);
-        
-        _dirty = false;
-    }
-
-    if(_verticesToDraw > 0) {
-
-        getGLProgram()->use();
-        getGLProgram()->setUniformsForBuiltins(_modelViewTransform);
-
-        // vertices
-        glVertexAttribPointer(GLProgram::VERTEX_ATTRIB_POSITION, 2, GL_FLOAT, GL_FALSE, sizeof(V2F_T2F), (GLvoid*) offsetof(V2F_T2F, vertices));
-
-        // tex coords
-        glVertexAttribPointer(GLProgram::VERTEX_ATTRIB_TEX_COORDS, 2, GL_FLOAT, GL_FALSE, sizeof(V2F_T2F), (GLvoid*) offsetof(V2F_T2F, texCoords));
-
-        // color
-        glVertexAttrib4f(GLProgram::VERTEX_ATTRIB_COLOR, _displayedColor.r/255.0f, _displayedColor.g/255.0f, _displayedColor.b/255.0f, _displayedOpacity/255.0f);
-        
-        glDrawElements(GL_TRIANGLES, _verticesToDraw, GL_UNSIGNED_SHORT, nullptr);
-        CC_INCREMENT_GL_DRAWN_BATCHES_AND_VERTICES(1,_verticesToDraw);
-    }
-
-    // cleanup
-    glBindBuffer(GL_ARRAY_BUFFER, 0);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
-}
+//void TMXLayer2::draw(Renderer *renderer, const Mat4& transform, uint32_t flags)
+//{
+//    _customCommand.init(_globalZOrder);
+//    _customCommand.func = CC_CALLBACK_0(TMXLayer2::onDraw, this, transform, flags);
+//    renderer->addCommand(&_customCommand);
+//}
+//
+//void TMXLayer2::onDraw(const Mat4 &transform, bool transformUpdated)
+//{
+//    GL::enableVertexAttribs(GL::VERTEX_ATTRIB_FLAG_POSITION | GL::VERTEX_ATTRIB_FLAG_TEX_COORD);
+//    GL::bindTexture2D( _texture->getName() );
+//
+//
+//    // tex coords + indices
+//    glBindBuffer(GL_ARRAY_BUFFER, _buffersVBO[0]);
+//    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _buffersVBO[1]);
+//
+//
+//    if( transformUpdated || _dirty )
+//    {
+//    
+//        Size s = Director::getInstance()->getWinSize();
+//		auto rect = Rect(0, 0, s.width, s.height);
+//
+//        Mat4 inv = transform;
+//        inv.inverse();
+//        rect = RectApplyTransform(rect, inv);
+//
+//        if (Configuration::getInstance()->supportsShareableVAO())
+//        {
+//            V2F_T2F_Quad* quads = (V2F_T2F_Quad*)glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
+//            GLushort* indices = (GLushort *)glMapBuffer(GL_ELEMENT_ARRAY_BUFFER, GL_WRITE_ONLY);
+//            _verticesToDraw = updateTiles(rect, quads, indices);
+//            glUnmapBuffer(GL_ARRAY_BUFFER);
+//            glUnmapBuffer(GL_ELEMENT_ARRAY_BUFFER);
+//        }
+//        else
+//        {
+//            _verticesToDraw = updateTiles(rect, nullptr, nullptr);
+//            
+//            if (_quads != nullptr && _indices != nullptr && _verticesToDraw > 0)
+//            {
+//                glBufferData(GL_ARRAY_BUFFER, sizeof(_quads[0]) * _numQuads , _quads, GL_DYNAMIC_DRAW);
+//                glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(_indices[0]) * _numQuads * 6 , _indices, GL_STATIC_DRAW);
+//            }
+//        }
+//
+//        // don't draw more than 65535 vertices since we are using GL_UNSIGNED_SHORT for indices
+//        _verticesToDraw = std::min(_verticesToDraw, 65535);
+//        
+//        _dirty = false;
+//    }
+//
+//    if(_verticesToDraw > 0) {
+//
+//        getGLProgram()->use();
+//        getGLProgram()->setUniformsForBuiltins(_modelViewTransform);
+//
+//        // vertices
+//        glVertexAttribPointer(GLProgram::VERTEX_ATTRIB_POSITION, 2, GL_FLOAT, GL_FALSE, sizeof(V2F_T2F), (GLvoid*) offsetof(V2F_T2F, vertices));
+//
+//        // tex coords
+//        glVertexAttribPointer(GLProgram::VERTEX_ATTRIB_TEX_COORDS, 2, GL_FLOAT, GL_FALSE, sizeof(V2F_T2F), (GLvoid*) offsetof(V2F_T2F, texCoords));
+//
+//        // color
+//        glVertexAttrib4f(GLProgram::VERTEX_ATTRIB_COLOR, _displayedColor.r/255.0f, _displayedColor.g/255.0f, _displayedColor.b/255.0f, _displayedOpacity/255.0f);
+//        
+//        glDrawElements(GL_TRIANGLES, _verticesToDraw, GL_UNSIGNED_SHORT, nullptr);
+//        CC_INCREMENT_GL_DRAWN_BATCHES_AND_VERTICES(1,_verticesToDraw);
+//    }
+//
+//    // cleanup
+//    glBindBuffer(GL_ARRAY_BUFFER, 0);
+//    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+//}
 
 int TMXLayer2::updateTiles(const Rect& culledRect, V2F_T2F_Quad *quads, GLushort *indices)
 {
@@ -440,7 +468,7 @@ void TMXLayer2::setupTiles()
 
     _screenTileCount = _screenGridSize.width * _screenGridSize.height;
 
-    setupVBO();
+    //setupVBO();
 }
 
 Mat4 TMXLayer2::tileToNodeTransform()

@@ -183,7 +183,7 @@ public:
     // Override
     //
     virtual std::string getDescription() const override;
-    virtual void draw(Renderer *renderer, const Mat4& transform, uint32_t flags) override;
+    //virtual void draw(Renderer *renderer, const Mat4& transform, uint32_t flags) override;
     void removeChild(Node* child, bool cleanup = true) override;
 
 protected:
@@ -199,7 +199,7 @@ protected:
     Mat4 tileToNodeTransform();
     Rect tileBoundsForClipTransform(const Mat4 &tileToClip);
 
-    void onDraw(const Mat4 &transform, bool transformUpdated);
+    //void onDraw(const Mat4 &transform, bool transformUpdated);
     
     int getVertexZForPos(const Point& pos);
     
