@@ -382,7 +382,8 @@ Sprite* PhysicsDemo::makeTriangle(Vec2 point, Size size, int color, PhysicsMater
 
 bool PhysicsDemo::onTouchBegan(Touch* touch, Event* event)
 {
-    auto location = touch->getLocation();
+    auto location = this->convertTouchToNodeSpace(touch);
+    
     auto arr = _scene->getPhysicsWorld()->getShapes(location);
     
     PhysicsBody* body = nullptr;
@@ -419,7 +420,7 @@ void PhysicsDemo::onTouchMoved(Touch* touch, Event* event)
     
     if (it != _mouses.end())
     {
-        it->second->setPosition(touch->getLocation());
+        it->second->setPosition(this->convertTouchToNodeSpace(touch));
     }
 }
 

@@ -1643,7 +1643,7 @@ void Node::updatePhysicsBodyPosition(Scene* scene)
     {
         if (scene != nullptr && scene->getPhysicsWorld() != nullptr)
         {
-            Vec2 pos = getParent() == scene ? getPosition() : scene->convertToNodeSpace(_parent->convertToWorldSpace(getPosition()));
+            Vec2 pos = getPosition();
             _physicsBody->setPosition(pos);
         }
         else
