@@ -113,10 +113,11 @@ void DemoFlower::onEnter()
 {
     ParticleDemo::onEnter();
 
-    _emitter = ParticleFlower::create();
-    _emitter->retain();
-    _background->addChild(_emitter, 10);
-    _emitter->setTexture( Director::getInstance()->getTextureCache()->addImage(s_stars1) );
+    //_emitter = ParticleFlower::create();
+    _emitterNew = ParticleSystemNew::create("Particles/Flower.plist");
+    _emitterNew->retain();
+    _background->addChild(_emitterNew, 10);
+    _emitterNew->setTexture( Director::getInstance()->getTextureCache()->addImage(s_stars1) );
 
     setEmitterPosition();
 }
@@ -931,14 +932,26 @@ void DemoParticleFromFile::onEnter()
     ParticleDemo::onEnter();
 
     _color->setColor(Color3B::BLACK);
-    removeChild(_background, true);
-    _background = nullptr;
-
+    //removeChild(_background, true);
+    //_background = nullptr;
+    
+    auto s = Director::getInstance()->getWinSize();
+    
     std::string filename = "Particles/" + _title + ".plist";
-    _emitter = ParticleSystemQuad::create(filename);
-    _emitter->retain();
-    addChild(_emitter, 10);
-
+    
+    
+    //auto _emitter = ParticleSystemQuad::create(filename);
+    //emitter->setTotalParticles(1);
+    //_emitter->retain();
+    //this->addChild(_emitter, 10);
+    //_emitter->setPosition( Vec2(s.width / 2 + 100, s.height / 2) );
+    
+    
+    auto _emitterNew = ParticleSystemNew::create(filename);
+    //emitter1->setTotalParticles(1);
+    _emitterNew->retain();
+    _background->addChild(_emitterNew, 10);
+    //_emitterNew->setPosition( Vec2(s.width / 2 - 100, s.height / 2) );
     setEmitterPosition();
 }
 
@@ -962,7 +975,7 @@ Layer* createParticleLayer(int nIndex)
 {
     switch(nIndex)
     {
-        case 0: return new ParticleReorder();
+        case 0: return new DemoFlower();;
         case 1: return new ParticleBatchHybrid();
         case 2: return new ParticleBatchMultipleEmitters();
         case 3: return new DemoFlower();
@@ -1067,6 +1080,7 @@ void ParticleDemo::onEnter(void)
 	this->addChild(_color);
 
     _emitter = nullptr;
+    _emitterNew = nullptr;
 
     auto listener = EventListenerTouchAllAtOnce::create();
     listener->onTouchesBegan = CC_CALLBACK_2(ParticleDemo::onTouchesBegan, this);
@@ -1144,6 +1158,11 @@ void ParticleDemo::onTouchesEnded(const std::vector<Touch*>& touches, Event  *ev
     {
         _emitter->setPosition(location -pos);
     }
+    
+    if (_emitterNew != nullptr)
+    {
+        _emitterNew->setPosition(location -pos);
+    }
 }
 
 void ParticleDemo::update(float dt)
@@ -1168,6 +1187,15 @@ void ParticleDemo::toggleCallback(Ref* sender)
         else if (_emitter->getPositionType() == ParticleSystem::PositionType::RELATIVE)
             _emitter->setPositionType(ParticleSystem::PositionType::GROUPED );
     }
+    if (_emitterNew != nullptr)
+    {
+        if (_emitterNew->getPositionType() == ParticleSystemNew::PositionType::GROUPED)
+            _emitterNew->setPositionType(ParticleSystemNew::PositionType::FREE);
+        else if (_emitterNew->getPositionType() == ParticleSystemNew::PositionType::FREE)
+            _emitterNew->setPositionType(ParticleSystemNew::PositionType::RELATIVE);
+        else if (_emitterNew->getPositionType() == ParticleSystemNew::PositionType::RELATIVE)
+            _emitterNew->setPositionType(ParticleSystemNew::PositionType::GROUPED );
+    }
 }
 
 void ParticleDemo::restartCallback(Ref* sender)
@@ -1175,6 +1203,10 @@ void ParticleDemo::restartCallback(Ref* sender)
     if (_emitter != nullptr)
     {
         _emitter->resetSystem();
+    }
+    if (_emitterNew != nullptr)
+    {
+        _emitterNew->resetSystem();
     }
 }
 
@@ -1199,7 +1231,11 @@ void ParticleDemo::setEmitterPosition()
     auto s = Director::getInstance()->getWinSize();
     if (_emitter != nullptr)
     {
-        _emitter->setPosition( Vec2(s.width / 2, s.height / 2) );
+        _emitter->setPosition( Vec2(s.width / 2 - 100, s.height / 2) );
+    }
+    if (_emitterNew != nullptr)
+    {
+        _emitterNew->setPosition( Vec2(s.width / 2 - 100, s.height / 2) );
     }
 }
 

@@ -17,6 +17,7 @@ class ParticleDemo : public BaseTest
 {
 protected:
     ParticleSystemQuad*    _emitter;
+    ParticleSystemNew*    _emitterNew;
     Sprite*            _background;
 	LayerColor*		 _color;
 
